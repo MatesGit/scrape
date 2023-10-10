@@ -1,0 +1,74 @@
+body {
+  color: #f39f5a;
+  display: flex;
+  justify-content: center;
+  background-color: #1d1a39;
+  text-align: center;
+}
+
+.property-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.property {
+  border: 1px solid #f39f5a;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  word-wrap: break-word;
+  background-color: #1d1a39;
+}
+
+.property h2 {
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.property img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  align-self: flex-end; 
+  border-radius: 10px;
+  border: 1px solid #f39f5a;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
+.prev-btn, .next-btn {
+  font-size: 30px;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #1d1a39;
+  border: 1px solid #f39f5a;
+  color: #f39f5a;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.prev-btn:hover, .next-btn:hover, .property:hover {
+  background-color: #26224b;
+}
+
+@media (max-width: 600px) {
+  .property-list {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .property-list {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
