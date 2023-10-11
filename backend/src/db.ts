@@ -1,4 +1,4 @@
-import { Client, Pool } from "pg"
+import { Client } from "pg"
 
 export const db = new Client({
   host: 'postgres',
