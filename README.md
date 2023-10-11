@@ -9,3 +9,9 @@ Scrape the first 500 items (title, image url) from sreality.cz (flats, sell - yo
 ## Link
 
 - Application is running at: [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
+
+## Additional info
+
+- Developed and debugged for Google Chrome 117 Browser
+- Completely responsive (Desktop/Tablet/Mobile)
+- Enjoy the project <3
