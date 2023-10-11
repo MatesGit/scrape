@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { Key, useEffect, useState } from 'react';
 
 interface Item {
@@ -11,13 +12,13 @@ const Scrape: React.FC = () => {
   const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/scrapedData/page/${pageNumber}`)
-      .then((response) => response.json())
-      .then((dt) => {
-        setData(dt.rows);
+    axios
+      .get(`http://localhost:5000/api/scrapedData/page/${pageNumber}`)
+      .then((response) => {
+        setData(response.data.rows);
       })
       .catch((error) => {
-        console.error('Chyba při načítání dat:', error);
+        console.error('Data fetching error: ', error);
       });
   }, [pageNumber]);
 
@@ -50,8 +51,8 @@ const Scrape: React.FC = () => {
         ))}
       </div>
       <div className='btns'>
-       {pageNumber > 1 ? <button className='prev-btn' onClick={handlePrev}>PREV</button> : null}
-       {pageNumber < 25 ? <button className='next-btn' onClick={handleNext}>NEXT</button> : null}
+        {pageNumber > 1 ? <button className='prev-btn' onClick={handlePrev}>PREV</button> : null}
+        {pageNumber < 25 ? <button className='next-btn' onClick={handleNext}>NEXT</button> : null}
       </div>
     </>
   );

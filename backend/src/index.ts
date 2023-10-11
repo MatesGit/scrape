@@ -5,13 +5,13 @@ import { db } from './db'
 import { processData } from './scrapeAndSave'
 
 const app = express()
-const port = process.env.PORT || 5000;
+const port = 5000;
 
 app.use(cors())
 app.use(bodyParser.json())
 
-processData().then(() => console.log('data processed'))
 
+processData()
 
 app.get('/api/scrapedData/page/:pageNumber', async (req, res) => {
   try {

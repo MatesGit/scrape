@@ -48,7 +48,15 @@ const scrapeData = async () => {
   }
 }
 
-const insertData = async (data) => {
+interface DataRecord {
+  name: string;
+  image: string;
+}
+interface InsertDataFunction {
+  (data: DataRecord[]): Promise<void>;
+}
+
+const insertData: InsertDataFunction = async (data) => {
   try {
     for (const record of data) {
       const { name, image } = record
